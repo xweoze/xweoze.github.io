@@ -1,0 +1,17 @@
+{% unless page.layout == 'home' and paginator.page > 1 %}
+  <section class="my-4" aria-labelledby="reading-music-title">
+    <h2 class="h5 mb-1" id="reading-music-title">
+      <a href="https://www.youtube.com/watch?v=7gtIh5dF9Xk&amp;t=25s" target="_blank" rel="noopener">Just One More Drink -- Jazz Noir</a>
+    </h2>
+    <p class="text-muted mb-2">Tom’s Jazz Lounge · Paws in Black</p>
+    <iframe
+      class="reading-music-player"
+      src="https://www.youtube.com/embed/7gtIh5dF9Xk?start=25&amp;controls=1"
+      title="Just One More Drink -- Jazz Noir · YouTube 재생기"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="encrypted-media; picture-in-picture; fullscreen"
+      allowfullscreen
+    ></iframe>
+  </section>
+{% endunless %}

@@ -30,3 +30,13 @@ html:lang(ko) {
     line-height: 1.85;
   }
 }
+
+.reading-music-player {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 0.5rem;
+}
