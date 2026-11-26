@@ -179,6 +179,10 @@ html:lang(ko) {
   max-inline-size: 5.5em;
 }
 
+#sidebar .profile-wrapper {
+  padding-right: 0.5rem;
+}
+
 #sidebar .site-subtitle,
 .club-tagline {
   width: fit-content;
@@ -189,6 +193,8 @@ html:lang(ko) {
   text-wrap: balance;
   color: var(--site-subtitle-color);
 }
+
+#sidebar .site-subtitle { font-size: 0.875rem; }
 
 :root[data-bs-theme='light'] :is(#sidebar .site-subtitle, .club-tagline) {
   padding: 0.1em 0.35em;
