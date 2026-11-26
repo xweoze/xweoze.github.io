@@ -1,0 +1,10 @@
+<script>
+  /* On first visit use the club palette. Keep the visitor's later mode choices. */
+  try {
+    const firstVisitKey = 'xweoze-jazz-theme-seen';
+    if (!localStorage.getItem(firstVisitKey)) {
+      if (Theme.isToggleable && Theme.isSystemTheme) Theme.update(Theme.Mode.DARK);
+      localStorage.setItem(firstVisitKey, '1');
+    }
+  } catch { /* Keep device mode when storage is unavailable. */ }
+</script>
