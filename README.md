@@ -12,11 +12,14 @@
    title: "오늘 공부한 내용"
    date: 2026-11-26 09:00:00 +0900
    categories: [공부]
+   mood: Wine
    tags: [git]
    ---
 
    오늘 해결한 질문과 확인한 내용을 여기에 씁니다.
    ```
+
+   `mood`에는 글을 쓸 때의 기분에 맞춰 `Whisky & Spirits`, `Cocktail`, `Wine` 중 하나를 적습니다. 예를 들어 `mood: Wine`인 글은 첫 화면의 Wine 아래에 표시됩니다. 글의 주제는 `categories`에 따로 적을 수 있습니다.
 
 3. `Commit changes`에서 `main`에 저장합니다. [배포 상태](https://github.com/xweoze/xweoze.github.io/actions/workflows/pages-deploy.yml)에서 성공을 확인한 뒤 글 목록을 엽니다.
 

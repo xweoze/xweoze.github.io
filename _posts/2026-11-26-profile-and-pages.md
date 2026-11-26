@@ -3,6 +3,7 @@ title: "GitHub에서 내 소개와 첫 글을 연결하는 법"
 date: 2026-11-26 00:00:00 +0900
 description: "소개를 고치는 곳과 새 글을 쓰는 곳은 어디일까? xweoze의 두 저장소를 예로 들어 글 한 편이 공개되는 과정을 따라갑니다."
 categories: [공부, GitHub]
+mood: Wine
 tags: [github, github-pages]
 ---
 

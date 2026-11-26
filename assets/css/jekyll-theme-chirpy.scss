@@ -328,6 +328,20 @@ html:lang(ko) {
 #post-list .drink-column .card {
   .post-preview > div { width: 100%; }
   .card-body { padding: 1rem; }
+  .card-title { -webkit-line-clamp: unset; }
+
+  @container (max-width: 18rem) {
+    .post-meta > div:first-child {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: baseline;
+      gap: 0.2rem;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .post-meta i:not(:first-child) { margin-left: 0; }
+  }
 }
 
 #post-list .post-preview {

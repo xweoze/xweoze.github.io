@@ -66,14 +66,16 @@ layout: default
 
   <div class="drink-columns">
     {% for drink in drinks %}
+      {% assign drink_key = drink | downcase %}
       <section class="drink-column" aria-labelledby="drink-{{ forloop.index }}">
         <h2 class="drink-title" id="drink-{{ forloop.index }}" lang="en">{{ drink | escape }}</h2>
-        {% assign matching_posts = posts | where_exp: 'post', 'post.categories contains drink' %}
-        {% for post in matching_posts %}
-          {% unless listed_urls contains post.url %}
+        {% for post in posts %}
+          {% if listed_urls contains post.url %}{% continue %}{% endif %}
+          {% assign mood = post.mood | default: '' | strip | downcase %}
+          {% if mood == drink_key or mood == empty and post.categories contains drink %}
             {% include home-post-card.html heading='h3' %}
             {% assign listed_urls = listed_urls | push: post.url %}
-          {% endunless %}
+          {% endif %}
         {% endfor %}
       </section>
     {% endfor %}
