@@ -183,6 +183,7 @@ html:lang(ko) {
     pointer-events: none;
     inset: -2.15rem 1.5% -0.55rem 32%;
     transform: skewX(-27deg);
+    mask-image: radial-gradient(ellipse 50% 50% at center, #000 65%, transparent 100%);
     background:
       radial-gradient(ellipse 10% 33% at 72% 36%, var(--stage-gold) 12%, transparent 100%),
       radial-gradient(ellipse 16% 48% at 70% 40%, var(--stage-gold) 8%, transparent 100%),
