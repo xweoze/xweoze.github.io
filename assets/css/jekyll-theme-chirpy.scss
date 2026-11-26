@@ -85,8 +85,9 @@ html:lang(ko) {
   --code-header-text-color: #c5b9ac;
   --code-header-icon-color: #c5b9ac;
   --record-accent: #ffb52e;
-  --stage-glow: rgb(255 181 46 / 23%);
-  --stage-rim: rgb(243 106 36 / 12%);
+  --stage-core: rgb(255 190 68 / 71%);
+  --stage-glow: rgb(255 181 46 / 43%);
+  --stage-rim: rgb(243 106 36 / 24%);
   --stage-line: #805638;
 
   .highlight, .highlight :is(.w, .p, .pi, .o, .ow) {
@@ -120,7 +121,8 @@ html:lang(ko) {
   --card-shadow: 0 0 0 1px var(--main-border-color);
   --toc-highlight: var(--link-color);
   --record-accent: #79451e;
-  --stage-glow: rgb(255 181 46 / 35%);
+  --stage-core: rgb(255 181 46 / 64%);
+  --stage-glow: rgb(255 181 46 / 34%);
   --stage-rim: rgb(243 106 36 / 12%);
   --stage-line: #997354;
   --inline-code-bg: #eae1d2;
@@ -138,10 +140,21 @@ html:lang(ko) {
 }
 
 #main-wrapper:has(.journal-heading) {
+  --light-x: 58%;
+  --light-y: 9.25rem;
   background-image:
-    radial-gradient(ellipse 54% 24rem at 81% -9rem, var(--stage-glow), transparent 95%),
-    radial-gradient(ellipse 57% 20rem at 95% -7rem, var(--stage-rim), transparent 95%);
+    radial-gradient(ellipse 24% 6.8rem at var(--light-x) var(--light-y),
+      var(--stage-core), var(--stage-glow) 24%, transparent 91%),
+    radial-gradient(ellipse 36% 10rem at calc(var(--light-x) + 5%) var(--light-y),
+      var(--stage-rim) 6%, transparent 96%);
   background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  #main-wrapper:has(.journal-heading) {
+    --light-x: 84%;
+    --light-y: 7.6rem;
+  }
 }
 
 .journal-heading {
