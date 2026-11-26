@@ -4,6 +4,7 @@
 @use 'abstracts/variables' with (
   $theme: '{{ site.theme_mode }}'
 );
+@use 'abstracts/breakpoints' as bp;
 
 @use 'main
 {%- if jekyll.environment == 'production' -%}
@@ -48,7 +49,7 @@ html:lang(ko) {
   --menu-highlight-bg: #3e2228;
   --menu-active-color: var(--heading-color);
   --site-title-color: var(--heading-color);
-  --site-subtitle-color: var(--text-muted-color);
+  --site-subtitle-color: #ebd9b8;
   --sidebar-bg: #100b0f;
   --sidebar-border-color: #41242b;
   --sidebar-muted-color: #cbb7aa;
@@ -105,7 +106,7 @@ html:lang(ko) {
   --link-underline-color: #ab7c66;
   --main-border-color: #dcc5b5;
   --site-title-color: var(--heading-color);
-  --site-subtitle-color: var(--text-muted-color);
+  --site-subtitle-color: #fff0d9;
   --sidebar-bg: #efddc9;
   --sidebar-border-color: var(--main-border-color);
   --sidebar-active-color: #752a28;
@@ -164,6 +165,66 @@ html:lang(ko) {
 #main-wrapper:has(.journal-heading) {
   background: radial-gradient(ellipse 80% 22rem at 64% 3rem,
     var(--stage-wall) 6%, transparent 96%);
+}
+
+#sidebar .site-title,
+.club-name {
+  font: 600 2rem/1.07 'Iowan Old Style', Georgia, serif;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+  color: var(--site-title-color);
+}
+
+#sidebar .site-title {
+  max-inline-size: 5.5em;
+}
+
+#sidebar .site-subtitle,
+.club-tagline {
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  font: italic 0.96rem/1.45 Georgia, serif;
+  word-spacing: normal;
+  text-wrap: balance;
+  color: var(--site-subtitle-color);
+}
+
+:root[data-bs-theme='light'] :is(#sidebar .site-subtitle, .club-tagline) {
+  padding: 0.1em 0.35em;
+  border-radius: 0.15em;
+  background: #503a37;
+}
+
+.club-welcome {
+  display: none;
+}
+
+@include bp.lt(bp.get(lg)) {
+  // The theme tucks the profile into the navigation drawer at this width.
+  .club-welcome {
+    display: grid;
+    justify-items: center;
+    gap: 0.3rem;
+    margin: 1.7rem 0;
+    text-align: center;
+
+    p { margin: 0; }
+
+    {% if site.avatar and site.avatar != empty %}
+    &::before {
+      content: '';
+      width: 4.25rem;
+      aspect-ratio: 1;
+      margin-bottom: 0.5rem;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px var(--avatar-border-color);
+      background: var(--sidebar-bg) url('{% include media-url.html src=site.avatar %}') center / cover;
+    }
+    {% endif %}
+  }
+
+  .club-welcome + .journal-heading { margin-top: 1.5rem; }
 }
 
 .journal-heading {

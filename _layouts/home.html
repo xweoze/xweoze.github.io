@@ -46,6 +46,13 @@ layout: default
   {% endfor %}
 {% endif %}
 
+{% if paginator.page == 1 %}
+  <header class="club-welcome" lang="en">
+    <p class="club-name">{{ site.title | escape }}</p>
+    <p class="club-tagline">{{ site.tagline | escape }}</p>
+  </header>
+{% endif %}
+
 <header class="journal-heading">
   <h1>{{ site.data.locales[lang].tabs.home }}</h1>
   <span>{{ all_pinned.size | plus: all_normal.size }}편</span>
