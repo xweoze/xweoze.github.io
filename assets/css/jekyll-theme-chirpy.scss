@@ -288,6 +288,48 @@ html:lang(ko) {
   margin-top: 0;
 }
 
+.drink-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+
+  @media (max-width: 767px) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+.drink-columns + .card-wrapper {
+  margin-top: 1.5rem;
+}
+
+.drink-column {
+  container-type: inline-size;
+}
+
+.drink-title,
+.listening-room h2 {
+  color: var(--heading-color);
+  font: italic 500 var(--club-heading-size, clamp(1.65rem, 3vw, 2.35rem))/1.2 'Iowan Old Style', Georgia, serif !important;
+  letter-spacing: -0.03em;
+}
+
+.drink-title {
+  --club-heading-size: clamp(1.15rem, 12cqi, 1.65rem);
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+.drink-title + .card-wrapper {
+  margin-top: 0.85rem;
+}
+
+#post-list .drink-column .card {
+  .post-preview > div { width: 100%; }
+  .card-body { padding: 1rem; }
+}
+
 #post-list .post-preview {
   overflow: hidden;
 }
@@ -317,12 +359,10 @@ html:lang(ko) {
 
   h2 {
     margin: 0 0 1.15rem;
-    font: italic 500 clamp(1.65rem, 3vw, 2.35rem)/1.2 'Iowan Old Style', Georgia, serif !important;
-    letter-spacing: -0.03em;
   }
 
   a {
-    color: var(--heading-color);
+    color: inherit;
     text-decoration-color: var(--link-underline-color);
   }
 
