@@ -30,3 +30,196 @@ html:lang(ko) {
     line-height: 1.85;
   }
 }
+
+// Both palettes share the original sidebar, search, archive, and reading controls.
+:root[data-bs-theme='dark'] {
+  --main-bg: #101426;
+  --text-color: #f5e6ce;
+  --heading-color: #f5e6ce;
+  --text-muted-color: #beb2aa;
+  --text-muted-highlight-color: #e2d6c7;
+  --label-color: var(--text-muted-color);
+  --link-color: #edc58f;
+  --link-underline-color: #795e41;
+  --main-border-color: #373342;
+  --button-bg: #1a1c2f;
+  --btn-border-color: var(--main-border-color);
+  --menu-bg: var(--button-bg);
+  --menu-highlight-bg: #333040;
+  --menu-active-color: var(--heading-color);
+  --site-title-color: var(--heading-color);
+  --site-subtitle-color: var(--text-muted-color);
+  --sidebar-bg: #0d1020;
+  --sidebar-border-color: #34303c;
+  --sidebar-muted-color: #bab1aa;
+  --sidebar-active-color: #ffb52e;
+  --sidebar-hover-bg: #292535;
+  --sidebar-btn-bg: #201f30;
+  --sidebar-btn-color: #dfc6a7;
+  --avatar-border-color: #574339;
+  --topbar-bg: rgb(16 20 38 / 92%);
+  --topbar-text-color: var(--text-muted-color);
+  --search-border-color: var(--main-border-color);
+  --search-icon-color: var(--text-muted-color);
+  --input-focus-border-color: var(--link-color);
+  --post-list-text-color: var(--text-muted-color);
+  --card-bg: #191d31;
+  --card-hover-bg: #3e3440;
+  --card-shadow: 0 0 0 1px #423841;
+  --card-header-bg: var(--sidebar-btn-bg);
+  --tag-border: #49404a;
+  --tag-hover: var(--sidebar-hover-bg);
+  --search-tag-bg: var(--sidebar-btn-bg);
+  --toc-highlight: var(--sidebar-active-color);
+  --checkbox-checked-color: var(--sidebar-active-color);
+  --blockquote-border-color: #782b35;
+  --blockquote-text-color: var(--text-muted-color);
+  --btn-share-color: var(--text-muted-color);
+  --tag-shadow: var(--main-bg);
+  --language-border-color: #3b3541;
+  --highlight-bg-color: #0c1020;
+  --highlighter-rouge-color: #f0d1a0;
+  --highlight-lineno-color: #a99e9b;
+  --inline-code-bg: #272638;
+  --code-color: #edddc4;
+  --code-header-text-color: #c5b9ac;
+  --code-header-icon-color: #c5b9ac;
+  --record-accent: #ffb52e;
+  --stage-glow: rgb(255 181 46 / 23%);
+  --stage-rim: rgb(243 106 36 / 12%);
+  --stage-line: #805638;
+
+  .highlight, .highlight :is(.w, .p, .pi, .o, .ow) {
+    color: var(--code-color);
+    background: var(--highlight-bg-color);
+  }
+
+  .highlight :is(.nt, .nn, .gh) { color: #e9bf8c; background: transparent; }
+  .highlight :is(.s, .s1, .s2, .sb, .sc, .dl) { color: #c6cba7; }
+  .highlight :is(.k, .kd, .kt, .kc, .kp, .kn, .kr, .kv) { color: #dab4bd; }
+  .highlight :is(.c, .ch, .cd, .cm, .cpf, .c1, .cs) { color: #b2a7a3; }
+}
+
+:root[data-bs-theme='light'] {
+  --main-bg: #f8efdf;
+  --text-color: #292735;
+  --heading-color: #191b2b;
+  --text-muted-color: #625651;
+  --link-color: #78411d;
+  --link-underline-color: #baa085;
+  --main-border-color: #dfd0b9;
+  --site-title-color: var(--heading-color);
+  --site-subtitle-color: var(--text-muted-color);
+  --sidebar-bg: #f1e4ce;
+  --sidebar-border-color: var(--main-border-color);
+  --sidebar-active-color: #713b1c;
+  --sidebar-hover-bg: #e6d6be;
+  --topbar-bg: rgb(248 239 223 / 92%);
+  --card-bg: #fbf4e7;
+  --card-hover-bg: #e1ceb0;
+  --card-shadow: 0 0 0 1px var(--main-border-color);
+  --toc-highlight: var(--link-color);
+  --record-accent: #79451e;
+  --stage-glow: rgb(255 181 46 / 35%);
+  --stage-rim: rgb(243 106 36 / 12%);
+  --stage-line: #997354;
+  --inline-code-bg: #eae1d2;
+  --highlighter-rouge-color: #553721;
+}
+
+::selection {
+  background: #ffb52e;
+  color: #101426;
+}
+
+:focus-visible {
+  outline: 2px solid var(--record-accent);
+  outline-offset: 3px;
+}
+
+#main-wrapper:has(.journal-heading) {
+  background-image:
+    radial-gradient(ellipse 54% 24rem at 81% -9rem, var(--stage-glow), transparent 95%),
+    radial-gradient(ellipse 57% 20rem at 95% -7rem, var(--stage-rim), transparent 95%);
+  background-repeat: no-repeat;
+}
+
+.journal-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin: clamp(2.5rem, 7vw, 5.25rem) 0 1.5rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--stage-line);
+
+  h1 {
+    margin: 0;
+    font: 600 clamp(2.4rem, 6vw, 4.1rem)/1.1 'AppleMyungjo', 'Batang', serif !important;
+    letter-spacing: -0.055em;
+  }
+
+  > span {
+    color: var(--record-accent);
+    font-size: 0.9rem;
+  }
+}
+
+.journal-heading + #post-list {
+  margin-top: 0;
+}
+
+#post-list .post-preview {
+  overflow: hidden;
+}
+
+#post-list .post-preview:focus-visible {
+  outline-offset: 4px;
+}
+
+#post-list .card-body .card-title {
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.listening-room {
+  margin: clamp(2rem, 6vw, 4rem) 0 2.5rem;
+  border-top: 1px solid var(--main-border-color);
+  padding-top: 1.45rem;
+
+  .record-artist {
+    color: var(--record-accent);
+    font-size: 0.83rem;
+    letter-spacing: 0.045em;
+    margin: 0 0 0.55rem;
+
+    span { color: var(--text-muted-color); margin: 0 0.28em; }
+  }
+
+  h2 {
+    margin: 0 0 1.15rem;
+    font: italic 500 clamp(1.65rem, 3vw, 2.35rem)/1.2 'Iowan Old Style', Georgia, serif !important;
+    letter-spacing: -0.03em;
+  }
+
+  a {
+    color: var(--heading-color);
+    text-decoration-color: var(--link-underline-color);
+  }
+
+  a:hover, a:focus-visible { color: var(--record-accent); }
+  a span { font: 0.58em/1 sans-serif; vertical-align: 0.2em; }
+
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 200px;
+    aspect-ratio: 16 / 9;
+    border: 1px solid var(--main-border-color);
+    border-radius: 0.65rem;
+    background: #0c1020;
+  }
+}
+
+#toc-wrapper .is-active-link::before {
+  background-color: var(--toc-highlight);
+}
