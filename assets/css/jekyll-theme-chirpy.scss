@@ -196,6 +196,15 @@ html:lang(ko) {
 
 #sidebar .site-subtitle { font-size: 0.875rem; }
 
+.club-intro {
+  margin: 0.65rem 0 0;
+  max-inline-size: 34ch;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-wrap: pretty;
+  color: var(--text-muted-color);
+}
+
 :root[data-bs-theme='light'] :is(#sidebar .site-subtitle, .club-tagline) {
   padding: 0.1em 0.35em;
   border-radius: 0.15em;
@@ -216,6 +225,7 @@ html:lang(ko) {
     text-align: center;
 
     p { margin: 0; }
+    .club-intro { margin-top: 0.3rem; }
 
     {% if site.avatar and site.avatar != empty %}
     &::before {
