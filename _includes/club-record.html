@@ -1,0 +1,13 @@
+{% assign record = site.club_record %}
+{% assign audio_file = site.static_files | where: 'path', record.path | first %}
+<div id="lp-player" data-state="{% if audio_file %}paused{% else %}error{% endif %}"
+     data-start="{{ record.start_seconds | default: 0 }}" data-track="{{ record.title | escape }} · {{ record.artist | escape }}">
+  <button type="button" class="lp-toggle" disabled
+          aria-label="{% if audio_file %}음악 재생{% else %}음악 재생 불가{% endif %}">
+    <span class="lp-disc" aria-hidden="true"></span>
+  </button>
+  {% if audio_file %}
+    <audio preload="metadata" src="{{ record.path | relative_url | escape }}"></audio>
+    <script defer src="{{ '/assets/js/club-record.js' | relative_url }}"></script>
+  {% endif %}
+</div>

@@ -94,19 +94,9 @@ layout: default
 {% endif %}
 
 {% if paginator.page == 1 %}
-  <section class="listening-room" aria-labelledby="record-title">
-    <p class="record-artist" lang="en">Tom’s Jazz Lounge <span aria-hidden="true"> / </span> Paws in Black</p>
-    <h2 data-toc-skip id="record-title" lang="en">
-      <a href="https://www.youtube.com/watch?v=7gtIh5dF9Xk&amp;t=25s" target="_blank" rel="noopener noreferrer">
-        Just One More Drink -- Jazz Noir <span aria-hidden="true">↗</span>
-      </a>
-    </h2>
-    <iframe
-      title="Just One More Drink -- Jazz Noir, YouTube 음악 재생기"
-      src="https://www.youtube.com/embed/7gtIh5dF9Xk?start=25&amp;autoplay=0&amp;controls=1&amp;playsinline=1"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="encrypted-media; picture-in-picture; fullscreen"
-      allowfullscreen
-    ></iframe>
-  </section>
+  <div class="home-boards">
+    {% for slot in (1..3) %}
+      <div class="home-board"></div>
+    {% endfor %}
+  </div>
 {% endif %}

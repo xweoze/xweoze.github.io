@@ -14,6 +14,7 @@
     <a class="site-title d-block" href="{{ '/' | relative_url }}" lang="en">{{ site.title | escape }}</a>
     <p class="site-subtitle fst-italic mb-0" lang="en">{{ site.tagline | escape }}</p>
     <p class="club-intro" lang="en">{{ site.club_intro | escape }}</p>
+    {% include club-record.html %}
   </header>
   <!-- .profile-wrapper -->
 
@@ -23,7 +24,7 @@
       <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
         <a href="{{ '/' | relative_url }}" class="nav-link">
           <i class="fa-fw fas fa-home"></i>
-          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+          <span class="posts-label" lang="en">Posts</span>
         </a>
       </li>
       <!-- the real tabs -->

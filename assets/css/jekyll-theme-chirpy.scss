@@ -196,6 +196,73 @@ html:lang(ko) {
 
 #sidebar .site-subtitle { font-size: 0.875rem; }
 
+#sidebar .posts-label {
+  font-style: italic;
+  text-transform: none;
+}
+
+#lp-player { margin-top: 0.65rem; }
+
+.lp-toggle {
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--record-accent);
+    outline-offset: 3px;
+  }
+}
+
+.lp-disc {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #51464a;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #160d11 0 3%, #953e46 3.5% 6%, #772434 6.5% 24%, #501c28 25% 27%, transparent 28%),
+    repeating-radial-gradient(circle, transparent 0 1.6px, rgb(211 201 191 / 14%) 1.9px 2.3px, transparent 2.6px 3px),
+    conic-gradient(from -70deg, #100f12 0deg, #413b3e 32deg, #161519 57deg, #0c0b0d 168deg, #222024 213deg, #100f12 282deg);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+  animation: lp-turn 4s linear infinite paused;
+}
+
+@keyframes lp-turn { to { transform: rotate(1turn); } }
+
+#lp-player[data-state='playing'] .lp-disc { animation-play-state: running; }
+#lp-player[data-state='loading'] .lp-toggle { cursor: progress; }
+#lp-player[data-state='loading'] .lp-disc { border-style: dashed; }
+#lp-player[data-state='error'] .lp-toggle { cursor: not-allowed; }
+#lp-player[data-state='error'] .lp-disc { filter: grayscale(1); opacity: 0.65; }
+#lp-player[data-state='error'] .lp-toggle::after {
+  content: '';
+  position: absolute;
+  inset: calc(50% - 1px) 15% auto;
+  height: 2px;
+  background: var(--sidebar-muted-color);
+  transform: rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #lp-player .lp-disc { animation: none; }
+  #lp-player[data-state='playing'] .lp-toggle::after {
+    content: '';
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 0.42rem;
+    height: 0.52rem;
+    border-inline: 2px solid #ffe6c7;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .club-intro {
   margin: 0.65rem 0 0;
   max-inline-size: 34ch;
@@ -307,15 +374,11 @@ html:lang(ko) {
   container-type: inline-size;
 }
 
-.drink-title,
-.listening-room h2 {
-  color: var(--heading-color);
-  font: italic 500 var(--club-heading-size, clamp(1.65rem, 3vw, 2.35rem))/1.2 'Iowan Old Style', Georgia, serif !important;
-  letter-spacing: -0.03em;
-}
-
 .drink-title {
   --club-heading-size: clamp(1.15rem, 12cqi, 1.65rem);
+  color: var(--heading-color);
+  font: italic 500 var(--club-heading-size)/1.2 'Iowan Old Style', Georgia, serif !important;
+  letter-spacing: -0.03em;
   margin: 0;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--main-border-color);
@@ -357,40 +420,27 @@ html:lang(ko) {
   line-height: 1.45;
 }
 
-.listening-room {
+.home-boards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: clamp(2rem, 6vw, 4rem) 0 2.5rem;
-  border-top: 1px solid var(--main-border-color);
-  padding-top: 1.45rem;
+  padding-block: 1rem;
+  border-block: 1px solid var(--main-border-color);
 
-  .record-artist {
-    color: var(--record-accent);
-    font-size: 0.83rem;
-    letter-spacing: 0.045em;
-    margin: 0 0 0.55rem;
-
-    span { color: var(--text-muted-color); margin: 0 0.28em; }
+  .home-board {
+    min-block-size: 7rem;
+    padding: 1rem;
   }
+  .home-board + .home-board { border-inline-start: 1px solid var(--main-border-color); }
 
-  h2 {
-    margin: 0 0 1.15rem;
-  }
-
-  a {
-    color: inherit;
-    text-decoration-color: var(--link-underline-color);
-  }
-
-  a:hover, a:focus-visible { color: var(--record-accent); }
-  a span { font: 0.58em/1 sans-serif; vertical-align: 0.2em; }
-
-  iframe {
-    display: block;
-    width: 100%;
-    min-height: 200px;
-    aspect-ratio: 16 / 9;
-    border: 1px solid var(--main-border-color);
-    border-radius: 0.65rem;
-    background: #100b0e;
+  @media (max-width: 767px) {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 0.75rem;
+    .home-board { min-block-size: 4.5rem; }
+    .home-board + .home-board {
+      border-inline-start: 0;
+      border-block-start: 1px solid var(--main-border-color);
+    }
   }
 }
 

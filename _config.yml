@@ -20,6 +20,12 @@ tagline: One last tune before tomorrow.
 
 club_intro: This is my personal jazz club. I pair each post with a cocktail to match its mood.
 
+club_record:
+  title: "A Beautiful Kind of Trouble -- Dark Jazz | Late Night Noir"
+  artist: "Tom’s Jazz Lounge / Paws in Black"
+  path: /assets/audio/a-beautiful-kind-of-trouble.mp3
+  start_seconds: 25
+
 description: >- # used by seo meta and the atom feed
   xweoze의 공부 기록과 개인 개발 작업을 한국어로 정리합니다.
 
