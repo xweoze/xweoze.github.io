@@ -1,0 +1,71 @@
+# Site wording for Chirpy's Korean locale.
+layout:
+  post: 글
+  category: 분류
+  tag: 주제어
+
+tabs:
+  home: 글 목록
+  categories: 분류
+  tags: 주제어
+  archives: 글 보관함
+  about: 소개
+
+search:
+  hint: 글 검색
+  cancel: 취소
+  no_results: 검색 결과가 없습니다.
+
+panel:
+  lastmod: 최근에 고친 글
+  trending_tags: 자주 쓰는 주제어
+  toc: 목차
+
+# Chirpy emits a license offer for posts when copyright.license.template is set.
+copyright:
+  license:
+    template: null
+  brief: null
+meta: ":PLATFORM과 :THEME로 만든 블로그"
+
+not_found:
+  statement: 요청한 페이지를 찾을 수 없습니다.
+
+notification:
+  update_found: 새 내용이 있습니다
+  update: 새로 고침
+
+theme:
+  light: 밝게
+  dark: 어둡게
+  system: 기기 설정
+
+post:
+  written_by: 글쓴이
+  posted: 작성
+  updated: 수정
+  words: 단어
+  pageview_measure: 조회
+  read_time:
+    unit: 분
+    prompt: 읽는 시간
+  edit: 글 고치기
+  relate_posts: 함께 읽을 글
+  share: 공유하기
+  button:
+    next: 다음 글
+    previous: 이전 글
+    copy_code:
+      succeed: 복사했습니다.
+    share_link:
+      title: 주소 복사
+      succeed: 주소를 복사했습니다.
+
+df:
+  post:
+    strftime: "%Y년 %-m월 %-d일"
+    dayjs: "YYYY년 M월 D일"
+
+categories:
+  category_measure: 개 분류
+  post_measure: 편

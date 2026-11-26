@@ -1,39 +1,25 @@
-# Chirpy Starter
+# xweoze의 개발 기록
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+공부 기록과 개인 개발 작업을 한국어로 정리하는 블로그(Blog)입니다. [글 목록](https://xweoze.github.io/) · [GitHub 계정 소개](https://github.com/xweoze)
 
-A minimal, ready-to-use template for creating a blog with the [**Chirpy**][chirpy] Jekyll theme. Get up and running in minutes with all critical files pre-configured.
+## 새 글 발행하기
 
-## Why This Starter Exists
+1. [글 작성 화면](https://github.com/xweoze/xweoze.github.io/new/main/_posts)에서 파일 이름을 `YYYY-MM-DD-짧은이름.md`로 입력합니다. 날짜에는 실제 발행일을 넣습니다.
+2. 아래 예시의 제목과 날짜를 바꾸고 두 번째 `---` 아래에 본문을 작성합니다. `+0900`은 한국 시간입니다.
 
-When installing Chirpy through [RubyGems.org][gem], Jekyll can only read a subset of theme files (`_data`, `_layouts`, `_includes`, `_sass`, `assets`) and limited `_config.yml` options from the gem. As a result, users cannot enjoy the full out-of-the-box experience that Chirpy offers.
+   ```markdown
+   ---
+   title: "오늘 공부한 내용"
+   date: 2026-11-26 09:00:00 +0900
+   categories: [공부]
+   tags: [git]
+   ---
 
-To unlock all features, the following files must be present in your Jekyll site:
+   오늘 해결한 질문과 확인한 내용을 여기에 씁니다.
+   ```
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+3. `Commit changes`에서 `main`에 저장합니다. [배포 상태](https://github.com/xweoze/xweoze.github.io/actions/workflows/pages-deploy.yml)에서 성공을 확인한 뒤 글 목록을 엽니다.
 
-This starter bundles those files from the latest **Chirpy** release along with a [CD][CD] workflow, so you can start writing immediately.
+소개 글은 `_tabs/about.md`, 블로그 이름과 한 줄 소개는 `_config.yml`에서 수정합니다. GitHub 계정의 소개 문구는 [별도 저장소의 README](https://github.com/xweoze/xweoze/blob/HEAD/README.md)에서 관리합니다.
 
-## Usage
-
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
-
-## Contributing
-
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
-
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+이 사이트는 Chirpy Starter를 사용합니다. [공식 설치 안내](https://chirpy.cotes.page/posts/getting-started/) · [공식 글 작성 안내](https://chirpy.cotes.page/posts/write-a-new-post/) · [시작용 코드의 MIT 이용 조건](LICENSE)

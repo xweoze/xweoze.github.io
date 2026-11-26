@@ -1,0 +1,32 @@
+---
+---
+
+@use 'abstracts/variables' with (
+  $theme: '{{ site.theme_mode }}'
+);
+
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+html:lang(ko) {
+  body,
+  .content,
+  .card-title,
+  h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+      'Malgun Gothic', 'Noto Sans CJK KR', sans-serif;
+  }
+
+  article :is(p, li, h1, h2, h3, h4),
+  .site-subtitle {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .content :is(p, li) {
+    line-height: 1.85;
+  }
+}
